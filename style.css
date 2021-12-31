@@ -1,0 +1,544 @@
+*{
+    margin:0;
+    padding: 0;
+    /* background:whitesmoke; */
+}
+
+body 
+{
+    background-color: whitesmoke;
+} 
+
+.nav1{
+display: flex;
+background-color: #5953b5;
+position: relative;
+justify-content: space-around;
+text-align: center;
+padding: 2px 0;
+}
+
+.nav1 .logo{
+    
+    padding: 10px;
+    width:250px;
+}
+
+.nav1 .search-box {
+    padding-top:1px;
+}
+
+.profile1{ 
+    display: flex;
+    justify-content: space-evenly ;
+}
+
+.profile1 i{
+    color: white;
+}
+.profile1 p{
+    padding-right: 8px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.nav1 .search-box{
+    display: flex;
+    margin: auto 0;
+    height: 35px;
+    line-height: 35px;
+}
+
+.nav1 .search-box input{
+    border: none;
+    outline: none;
+    background-color: #fff;
+    height:100%;
+    padding-left: 0 10px;
+    font-size: 15px;
+    width: 430px;
+    padding-left: 7px;
+}
+
+.nav1 .search-box span{
+    color:gray;
+    font-size: 20px;
+    background: white;
+    height: 19px;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.nav1 .bar {
+    position: relative;
+    margin: auto;
+    display: none;
+}
+
+.nav1 .bar span{
+    position: absolute;
+    color:  #fff;
+    font-size: 35px;
+}
+
+@media screen and  (max-width:1100px){
+    .nav1{
+        display: block;
+        padding: 0;
+    }
+
+    .nav1 .logo{
+        display: inline-block;
+        padding: 15px 30px;
+    }
+    
+    .nav1 .search-box{
+        /*width:100%;
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 15px;*/
+        display: none;
+    }
+    .profile1{
+        display: none;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        height:0;
+        display: none;
+        transition: 0.3s;
+    }
+
+    nav ul li{
+        text-align: center;
+    }
+
+    nav ul li a{
+        color: black;
+        font-size: 20px;
+        padding: 25px;
+        display: block;
+    }
+
+    .nav1 .bar{
+        display: block;
+        position: absolute;
+        top:20px;
+        right:80px;
+        cursor:pointer;
+    }
+
+    .nav1 .bar #times{
+        display: none;
+    }
+
+    .sameCls:checked ~ .nav1 .bar #times{
+        display: block;
+    }
+
+    .sameCls:checked ~ .nav1 .bar #bars{
+        display: none;
+    }
+
+    .sameCls:checked ~ .item-list{
+        transform: translateX(-100%) scale(1);
+        opacity: 1;
+        user-select: auto;
+    }
+
+    
+
+    
+}
+
+.sameCls {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.item-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  top: 70px;
+  transform: translateX(-50%) scale(0);
+  transform-origin: center;
+  transition: all 0.4s cubic-bezier(0.54, -0.1, 0.57, 0.57);
+  background-color: #5953b5;
+  color: white;
+  width: 200px;
+  height: 200px;
+  padding: 20px 50px;
+  text-align: center;
+  font-weight: 300px ;
+  opacity: 0;
+  user-select: none;
+}
+
+
+
+
+@media screen and  (max-width:400px){
+
+   .nav1 .bar{
+    display: none;
+}
+}
+
+nav ul{
+    width: 100%;
+    height:40px;
+    background: white; 
+    padding-top:15px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 35px;
+}
+
+nav ul li a {
+    background-color: white;
+    position: relative;
+    color: gray;
+    font-size: 20px;
+    text-decoration: none;
+    border-bottom : 3px solid transparent;
+}
+
+nav ul li a:hover{
+    color: #5953b5;
+    border-bottom:3px solid #5953b5;
+    
+}
+
+
+.acct-container  { 
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    background-color: white;
+    margin:0 20px;
+}
+
+.flex-part{
+    background-color: white;
+    padding: 10px 20px;
+    line-height: 1.8;
+}
+
+button{
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 12px;
+    border: #07c160;
+}
+
+.part-1 p{
+    background-color: white;
+}
+
+.part-2 p{
+    background-color: white;
+}
+.part-3 button{
+    background-color: green;
+}
+
+@media screen and  (max-width:500px){
+    .acct-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.flex-container{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:15px 20px;
+}
+
+.flex-item{
+ flex:1;
+ margin: 2px;
+ padding: 10px;
+ transition: 0.3s;
+ color: white;
+ line-height: 1.5;
+ padding-left: 30px;;
+}
+
+.item-1{
+    background: #8090ff;
+}
+
+.item-2{
+    background: #ff7093;
+}
+
+.item-3{
+    background: #ff9156;
+}
+
+@media screen and (max-width: 700px) {
+    .flex-container{
+        flex-flow: column wrap;
+    }
+
+
+ .month-cont span{
+        display: none;
+    }
+}
+
+.main-container{
+background-color: white;
+padding: 10px 10px;
+margin: 20px;
+}
+.container-1  { 
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    margin:0 20px;
+    line-height: 1.5;
+}
+
+.para-cont{
+    display: flex;
+}
+.month-cont select{
+    margin-left: 10px;
+}
+
+.month-cont span{
+    margin-left:10px ;
+}
+
+.month-cont select{
+    padding: 5px 16px;
+    color:black;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.month-cont select ~ option{
+    text-align: left;
+    padding: 5px 16px;
+    color:black;
+    background-color: white;
+    border: 1px solid grey;
+}
+.graph-img img{
+    display: flex;
+    flex:1;
+    width:95%;
+    height :250px;
+    padding:10px 20px;
+}
+
+.table-container{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+}
+
+.nav2 a{
+    position: relative;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom : 3px solid transparent;
+    padding: 0 5px;
+}
+
+.nav2 a:hover{
+    border-bottom:3px solid #5953b5;
+    color: #5953b5;
+}
+
+.table-head{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    margin: 20px 20px;
+    padding: 30px;
+}
+
+.table-header1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-header2{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.table-header2 .search-box input{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 100px;
+    
+}
+
+.table-header2 .search-box span{
+    color:gray;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@media screen and (max-width: 500px) {
+    .table-header2{
+        display: none;
+    }
+}
+
+.para-cont2{
+    display: flex;
+}
+
+.para-cont2 select{
+    padding: 5px 10px;
+    color:black;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+.table1{
+    width: 100%;
+    height: 400px;
+    overflow-y: hidden;
+    margin-top: 20px;
+}
+
+.tablee1{
+    width: 1250px;
+    text-align: left;
+    border-collapse: collapse;
+    cursor: pointer;
+
+}
+
+.tablee1 thead{
+    color: black;
+    text-align: center;
+    font-size: 0.8em;
+}
+.tablee1 th{
+    width: 200px;
+    height: 50px;
+}
+.tablee1 tbody tr{
+    background: white;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    color: black;
+    font-size: 0.9em;
+
+}
+
+.tablee1 td{
+    width: 200px;
+    height: 60px;
+    text-align: center;
+}
+
+.tablee1 tbody tr:nth-child(odd){
+    background: #f8f8fa;
+}
+
+
+.table2{
+    width: 100%;
+    height: 290px;
+    overflow-y: hidden;
+    margin: 30px 0;
+    border:1px solid gainsboro;
+}
+
+.tablee2{
+    width: 1250px;
+    text-align: left;
+    border-collapse: collapse;
+    cursor: pointer;
+
+}
+
+.tablee2 thead{
+    color: black;
+    text-align: center;
+    font-size: 0.8em;
+    background: #f8f8fa;
+}
+.tablee2 th{
+    width: 200px;
+    height: 50px;
+}
+.tablee2 tbody tr{
+    background: white;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    color: black;
+    font-size: 0.9em;
+
+}
+
+.tablee2 td{
+    width: 200px;
+    height: 60px;
+    text-align: center;
+}
+
+.footer-content{
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.footer-nav a{
+    position: relative;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom : 3px solid transparent;
+    padding: 0 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
